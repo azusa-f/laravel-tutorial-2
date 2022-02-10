@@ -18,9 +18,9 @@ class MailTest extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($mail_text)
     {
-        $this->mail_text = "aaaa";
+        $this->mail_text = $mail_text;
         //
     }
 

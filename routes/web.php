@@ -23,3 +23,5 @@ Route::get('/mail', function () {
     $mail_text = "メールテストで使いたい文章";
     Mail::to('to_address@example.com')->send(new MailTest($mail_text));
 });
+
+Route::get('/crud', 'App\Http\Controllers\CrudController@getIndex');

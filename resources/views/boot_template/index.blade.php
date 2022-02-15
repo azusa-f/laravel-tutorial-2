@@ -1,5 +1,5 @@
 
-@extends('layouts.master_bootstrap_v2') {{-- テンプレート（CSSカスタマイズ版）読み込み --}}
+@extends('layouts.master_bootstrap') {{-- テンプレート（CSSカスタマイズ版）読み込み --}}
 @section('title', 'Laravel CRUD APP チュートリアル') {{-- サイトタイトル定義 --}}
 @section('content')
     <!-- Page Content -->
@@ -45,36 +45,23 @@
                                         <th scope="col" width="15%">TEL</th>
                                         <th scope="col" width="30%" colspan="3">OPTION</th>
                                     </tr>
+
+                                    @foreach($students as $student)
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>ダミー　テスト①</td>
-                                        <td>test1@test1.com</td>
-                                        <td>080-1111-1111</td>
+                                        <th scope="row">{{$student->id}}</th>
+                                        <td>{{$student->name}}</td>
+                                        <td>{{$student->email}}</td>
+                                        <td>{{$student->tel}}</td>
                                         <td><button type="button" class="btn btn-success">詳細</button></td>
                                         <td><button type="button" class="btn btn-primary">編集</button></td>
                                         <td><button type="button" class="btn btn-danger">削除</button></td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>ダミー　テスト②</td>
-                                        <td>test@test2.com</td>
-                                        <td>080-2222-2222</td>
-                                        <td><button type="button" class="btn btn-success">詳細</button></td>
-                                        <td><button type="button" class="btn btn-primary">編集</button></td>
-                                        <td><button type="button" class="btn btn-danger">削除</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>ダミー　テスト③</td>
-                                        <td>test@test3.com</td>
-                                        <td>080-3333-3333</td>
-                                        <td><button type="button" class="btn btn-success">詳細</button></td>
-                                        <td><button type="button" class="btn btn-primary">編集</button></td>
-                                        <td><button type="button" class="btn btn-danger">削除</button></td>
-                                    </tr>
+                                    @endforeach
                                 </table>
                             </div>
                             <!--/テーブル-->
+
+                        {!! $students->render() !!}    
 
                         {{Form::close()}}
 

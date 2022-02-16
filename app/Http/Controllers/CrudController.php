@@ -74,6 +74,12 @@ class CrudController extends Controller
         //リダイレクト
         return redirect()->to('boot_template/list');
     }
-
+   
+    //詳細画面
+    public function detail_index($id)
+    {
+    $student = \App\Models\Student::findOrFail($id);
+    return view('boot_template.detail')->with('student',$student);
+    }
 
 }

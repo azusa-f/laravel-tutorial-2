@@ -33,6 +33,8 @@ Route::group(['prefix' => 'boot_template'], function () {
     Route::get('edit/{id}', 'App\Http\Controllers\CrudController@edit_index'); //編集
     Route::patch('edit/{id}','App\Http\Controllers\CrudController@edit_confirm'); // 確認
     Route::post('edit/{id}', 'App\Http\Controllers\CrudController@edit_finish');  // 完了
+
+    Route::get('detail/{id}/', 'App\Http\Controllers\CrudController@detail_index'); // 詳細
 });
 
 

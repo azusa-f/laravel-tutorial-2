@@ -28,7 +28,7 @@
                                 </form>
                             </div>
                             <div class="col-sm-2" style="padding-left: 0;">
-                                <a href="#" class="btn" style="background-color: #f0ad4e; color: white; width: 100px;"><i class="fas fa-plus"></i> 新規登録</a>
+                                <a href="/boot_template/new" class="btn" style="background-color: #f0ad4e; color: white; width: 100px;"><i class="fas fa-plus"></i> 新規登録</a>
                             </div>
                         </div>
 

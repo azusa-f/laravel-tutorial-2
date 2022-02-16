@@ -44,4 +44,36 @@ class CrudController extends Controller
         return redirect()->to('crud');
     }
 
+    public function edit_index($id)
+    {
+        $student = \App\Models\Student::findOrFail($id);
+        return view('boot_template.edit_index')->with('student',$student)
+                                               ->with('id',$id);
+    }
+
+    public function edit_confirm(\App\Http\Requests\ValiCrudRequest $req)
+    {
+        $data = $req->all();
+        return view('boot_template.edit_confirm')->with($data);
+    }
+
+    public function edit_finish(Request $request, $id)
+    {
+        //該当レコードを抽出
+        $student = \App\Models\Student::findOrFail($id);
+
+        //値を代入
+        $student->name = $request->name;
+        $student->email = $request->email;
+        $student->tel = $request->tel;
+        $student->message = $request->message;
+
+        //保存（更新）
+        $student->save();
+
+        //リダイレクト
+        return redirect()->to('boot_template/list');
+    }
+
+
 }

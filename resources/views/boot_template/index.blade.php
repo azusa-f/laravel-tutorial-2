@@ -53,7 +53,7 @@
                                         <td>{{$student->email}}</td>
                                         <td>{{$student->tel}}</td>
                                         <td><button type="button" class="btn btn-success">詳細</button></td>
-                                        <td><button type="button" class="btn btn-primary">編集</button></td>
+                                        <td><a href="/boot_template/edit/{{$student->id}}"><button type="button" class="btn btn-primary">編集</button></a></td>
                                         <td><button type="button" class="btn btn-danger">削除</button></td>
                                     </tr>
                                     @endforeach

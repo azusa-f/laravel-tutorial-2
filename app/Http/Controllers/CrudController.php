@@ -41,7 +41,7 @@ class CrudController extends Controller
         $student->save();
 
         // 一覧にリダイレクト
-        return redirect()->to('crud');
+        return redirect()->to('boot_template/list');
     }
 
     public function edit_index($id)
@@ -78,8 +78,16 @@ class CrudController extends Controller
     //詳細画面
     public function detail_index($id)
     {
-    $student = \App\Models\Student::findOrFail($id);
-    return view('boot_template.detail')->with('student',$student);
+        $student = \App\Models\Student::findOrFail($id);
+        return view('boot_template.detail')->with('student',$student);
+    }
+
+    public function us_delete($id)
+    {
+        var_dump(222);
+        // $user = \App\Models\Student::find($id);
+        // $user->delete();
+        // return redirect()->to('boot_template/list');
     }
 
 }

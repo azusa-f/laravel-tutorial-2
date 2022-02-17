@@ -34,7 +34,11 @@ Route::group(['prefix' => 'boot_template'], function () {
     Route::patch('edit/{id}','App\Http\Controllers\CrudController@edit_confirm'); // 確認
     Route::post('edit/{id}', 'App\Http\Controllers\CrudController@edit_finish');  // 完了
 
-    Route::get('detail/{id}/', 'App\Http\Controllers\CrudController@detail_index'); // 詳細
+    Route::get('detail/{id}', 'App\Http\Controllers\CrudController@detail_index'); // 詳細
+
+    Route::post('delete/{id}', 'App\Http\Controllers\CrudController@us_delete')->name('delete');//削除
+    
 });
+
 
 

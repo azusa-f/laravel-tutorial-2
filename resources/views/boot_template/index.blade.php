@@ -54,7 +54,11 @@
                                         <td>{{$student->tel}}</td>
                                         <td><a href="/boot_template/detail/{{$student->id}}"><button type="button" class="btn btn-success">詳細</button></a></td>
                                         <td><a href="/boot_template/edit/{{$student->id}}"><button type="button" class="btn btn-primary">編集</button></a></td>
-                                        <td><button type="button" class="btn btn-danger">削除</button></td>
+                                        <td>
+                                            <form action="/boot_template/delete/{{$student->id}}" method="POST">
+                                            @csrf
+                                            <input type="submit" class="btn btn-danger btn-dell" value="削除"></form>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </table>

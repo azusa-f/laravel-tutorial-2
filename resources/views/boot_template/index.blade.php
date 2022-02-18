@@ -20,7 +20,7 @@
                             <div class="col-sm-10" style="padding-left:0;">
                                 <form method="get" action="" class="form-inline">
                                     <div class="form-group">
-                                        <input type="text" name="keyword" class="form-control" value="" placeholder="検索キーワード">
+                                        <input type="text" name="keyword" class="form-control" value="{{$keyword}}" placeholder="名前やメールアドレス">
                                     </div>
                                     <div class="form-group">
                                         <input type="submit" value="検索" class="btn btn-info" style="margin-left: 15px; color:white;">
@@ -64,6 +64,8 @@
                                         </td>
                                     </tr>
                                     @endforeach
+
+
                                 </table>
                             </div>
                             <!--/テーブル-->
@@ -76,3 +78,19 @@
     </div>
     <!-- / Page Content -->
 @endsection
+
+@section('btn-dell')
+<script>
+$(function (){
+    $(".btn-dell").click(function(){
+        if(confirm("本当に削除しますか？")){
+            // そのままsubmit処理を実行（※削除）
+        }else{
+            // キャンセル
+            return false;
+        }
+    });
+});
+</script>
+@endsection
+

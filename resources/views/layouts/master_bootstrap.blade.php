@@ -33,6 +33,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
 @yield('btn-dell')
 @yield('js-validation')
-@yield('script')
 </body>
 </html>

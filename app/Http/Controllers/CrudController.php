@@ -6,13 +6,26 @@ use Illuminate\Http\Request;
 
 class CrudController extends Controller
 {
-    public function getIndex()
+    public function getIndex(Request $rq)
     {
+       $keyword = $rq->input('keyword');
        $query = \App\Models\Student::query();
 
+       if(!empty($keyword))
+       {
+        $query->where('name','like',"%$keyword%"); 
+        $query->orWhere('email','like',"%$keyword%"); 
+
+       }
+    
        // 全件取得 +ページネーション
+       
        $students = $query->orderBy('id','desc')->paginate(5);
-       return view('boot_template.index')->with('students',$students);
+
+       return view('boot_template.index')->with('students',$students)
+                                         ->with('keyword',$keyword);
+
+       
     }
 
     public function new_index()
@@ -84,7 +97,6 @@ class CrudController extends Controller
 
     public function us_delete($id)
     {
-        //var_dump(222);
         $user = \App\Models\Student::find($id);
         $user->delete();
         return redirect()->to('boot_template/list');

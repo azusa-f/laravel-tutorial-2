@@ -35,6 +35,8 @@
                         {{Form::open(['url' => '/', 'files' => true])}}
                         {{Form::token()}}
 
+                        {{Form::close()}}
+
                             <!--テーブル-->
                             <div class="table-responsive">
                                 <table class="table" style="width: 1000px; max-width: 0 auto;">
@@ -55,9 +57,10 @@
                                         <td><a href="/boot_template/detail/{{$student->id}}"><button type="button" class="btn btn-success">詳細</button></a></td>
                                         <td><a href="/boot_template/edit/{{$student->id}}"><button type="button" class="btn btn-primary">編集</button></a></td>
                                         <td>
-                                            <form action="/boot_template/delete/{{$student->id}}" method="POST">
-                                            @csrf
-                                            <input type="submit" class="btn btn-danger btn-dell" value="削除"></form>
+                                        <form action="/boot_template/delete/{{$student->id}}" method="POST">
+                                        @csrf
+                                        <input type="submit" class="btn btn-danger btn-dell" value="削除">
+                                        </form>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -65,10 +68,7 @@
                             </div>
                             <!--/テーブル-->
 
-                        {!! $students->render() !!}    
-
-                        {{Form::close()}}
-
+                        {!! $students->render() !!}  
                     </div><!-- /container -->
                 </div>
             </div>

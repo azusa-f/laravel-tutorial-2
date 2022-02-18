@@ -84,10 +84,10 @@ class CrudController extends Controller
 
     public function us_delete($id)
     {
-        var_dump(222);
-        // $user = \App\Models\Student::find($id);
-        // $user->delete();
-        // return redirect()->to('boot_template/list');
+        //var_dump(222);
+        $user = \App\Models\Student::find($id);
+        $user->delete();
+        return redirect()->to('boot_template/list');
     }
 
 }

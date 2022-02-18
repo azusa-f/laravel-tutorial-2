@@ -54,7 +54,7 @@ class CrudController extends Controller
         $student->save();
 
         // 一覧にリダイレクト
-        return redirect()->to('boot_template/list');
+        return redirect()->to('boot_template/list')->with('flashmessage','登録が完了しました。');
     }
 
     public function edit_index($id)
@@ -85,7 +85,7 @@ class CrudController extends Controller
         $student->save();
 
         //リダイレクト
-        return redirect()->to('boot_template/list');
+        return redirect()->to('boot_template/list')->with('flashmessage','編集が完了しました。');
     }
    
     //詳細画面
@@ -99,7 +99,7 @@ class CrudController extends Controller
     {
         $user = \App\Models\Student::find($id);
         $user->delete();
-        return redirect()->to('boot_template/list');
+        return redirect()->to('boot_template/list')->with('flashmessage','削除が完了しました。');
     }
 
 }

@@ -16,17 +16,17 @@ class CrudController extends Controller
 
        if(!empty($keyword))
        {
-        $query->where('name','like',"%$keyword%"); 
-        $query->orWhere('email','like',"%$keyword%"); 
+            $query->where('name', 'like', "%$keyword%"); 
+            $query->orWhere('email', 'like', "%$keyword%"); 
 
        }
     
        // 全件取得 +ページネーション
-       $students = $query->orderBy('id','desc')->paginate(5);
+       $students = $query->orderBy('id', 'desc')->paginate(5);
        
        //検索結果と検索ワードを返す
-       return view('boot_template.index')->with('students',$students)
-                                         ->with('keyword',$keyword);       
+       return view('boot_template.index')->with('students', $students)
+                                         ->with('keyword', $keyword);       
     }
 
     //新規登録の画面表示
@@ -92,14 +92,14 @@ class CrudController extends Controller
         $student->save();
 
         //リダイレクト
-        return redirect()->to('boot_template/list')->with('flashmessage','編集が完了しました。');
+        return redirect()->to('boot_template/list')->with('flashmessage', '編集が完了しました。');
     }
    
     //詳細画面
     public function detail_index($id)
     {
         $student = \App\Models\Student::findOrFail($id);
-        return view('boot_template.detail')->with('student',$student);
+        return view('boot_template.detail')->with('student', $student);
     }
 
     //削除処理
@@ -108,7 +108,7 @@ class CrudController extends Controller
         $user = \App\Models\Student::find($id);
         $user->delete();
         //削除したら一覧表示画面にリダイレクトとダイアログ表示
-        return redirect()->to('boot_template/list')->with('flashmessage','削除が完了しました。');
+        return redirect()->to('boot_template/list')->with('flashmessage', '削除が完了しました。');
     }
 
 }

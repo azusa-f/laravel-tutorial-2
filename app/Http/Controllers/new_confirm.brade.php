@@ -60,7 +60,7 @@
     <label class="col-sm-2 col-form-label">メッセージ</label>
     <div class="col-sm-10">{!! nl2br(e( $message )) !!}</div>
 </div>
-<!--/電話番号-->
+<!--/メッセージ-->
 
 <!--ボタンブロック-->
 <div class="form-group row mt-5">

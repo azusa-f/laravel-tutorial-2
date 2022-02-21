@@ -38,7 +38,7 @@ class ValiCrudRequest extends FormRequest
     //不備があった際に表示するメッセージ
     public function messages() {
         return [
-        "required" => "必須項目です。",
+            "required" => "必須項目です。",
         ];
       }
 }

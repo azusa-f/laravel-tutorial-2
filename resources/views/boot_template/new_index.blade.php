@@ -32,6 +32,8 @@
 {{ csrf_field() }}
 {{ method_field('patch') }}
 
+
+/* old():バリデーションでリダイレクトされても入力した文字が消えないようにする */
 <!--お名前-->
 <div class="form-group row">
     <label for="inputName" class="col-sm-2 col-form-label">お名前</label>
@@ -85,7 +87,7 @@
         <div class="invalid-feedback">必須項目です</div><!--HTMLバリデーション-->
     @endif
 </div>
-<!--/備考欄-->
+<!--/メッセージ-->
 
 <!--ボタンブロック-->
 <div class="form-group row mt-5">

@@ -60,6 +60,7 @@
 <!--メッセージ-->
 <div class="form-group row">
     <label class="col-sm-2 col-form-label">メッセージ</label>
+    /* 改行とエスケープ処理 */
     <div class="col-sm-10">{!! nl2br(e( $message )) !!}</div>
 </div>
 <!--/電話番号-->

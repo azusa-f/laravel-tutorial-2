@@ -81,7 +81,7 @@
                                         <th scope="col" width="15%">TEL</th>
                                         <th scope="col" width="30%" colspan="3">OPTION</th>
                                     </tr>
-
+                                   <!-- 生徒情報を表示 -->
                                     @foreach($students as $student)
                                     <tr>
                                         <th scope="row">{{$student->id}}</th>
@@ -113,6 +113,7 @@
     <!-- / Page Content -->
 @endsection
 
+<!-- 削除確認ダイアログ表示 -->
 @section('btn-dell')
 <script>
 $(function (){

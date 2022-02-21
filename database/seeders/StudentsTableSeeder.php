@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+//studentsテーブルにテストデータ登録
 class StudentsTableSeeder extends Seeder
 {
     /**
@@ -14,17 +15,10 @@ class StudentsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        //既存データ削除
         DB::table('students')->delete();
-
-        // for ($i = 0; $i < 10; $i++) {
-        //     \App\Models\Student::create([
-        //         'name' => $faker->name(),
-        //         'email' => $faker->email(),
-        //         'tel' => $faker->phoneNumber(),
-        //         'message' => $faker->text()
-        //     ]);
-
+        
+        //テストデータ登録
         DB::table('students')->insert(
             [
                 [ 

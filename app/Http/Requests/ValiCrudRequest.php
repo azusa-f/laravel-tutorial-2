@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+//バリデーション
 class ValiCrudRequest extends FormRequest
 {
     /**
@@ -21,6 +22,8 @@ class ValiCrudRequest extends FormRequest
      *
      * @return array
      */
+
+     //チェック項目
     public function rules()
     {
         return [
@@ -32,6 +35,7 @@ class ValiCrudRequest extends FormRequest
         ];
     }
 
+    //不備があった際に表示するメッセージ
     public function messages() {
         return [
         "required" => "必須項目です。",

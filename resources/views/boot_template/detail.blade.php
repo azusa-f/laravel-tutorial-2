@@ -11,13 +11,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!--Font Awesome5-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-
-    <!--自作CSS -->
-    <style type="text/css">
-        <!--
-        /*ここに調整CSS記述*/
-        -->
-    </style>
 </head>
 
 <body>

@@ -25,7 +25,6 @@
                 {{ csrf_field() }}
                 {{ method_field('patch') }}
 
-
                 <!--お名前-->
                 <div class="form-group row">
                     <label for="inputName" class="col-sm-2 col-form-label">お名前</label>
@@ -54,7 +53,6 @@
                 </div>
                 <!--/メールアドレス-->
 
-
                 <!--電話番号-->
                 <div class="form-group row">
                     <label for="inputTel" class="col-sm-2 col-form-label">電話番号</label>
@@ -68,7 +66,6 @@
                     </div>
                 </div>
                 <!--/電話番号-->
-
 
                 <!--メッセージ-->
                 <div class="form-group row">
